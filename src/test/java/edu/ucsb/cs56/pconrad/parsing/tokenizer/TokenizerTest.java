@@ -284,16 +284,18 @@ public class TokenizerTest {
         return returnValue;
     }
 
+	public static final String newline = System.getProperty("line.separator");
+	
     @Test
     public void testMainWithEmptyArgs() throws java.io.UnsupportedEncodingException  {
         String outContent = testMainWithSystemInAndOut("", new String[0]);
-        assertEquals("Tokenizing: 2+2\n[IntToken(2), PlusToken, IntToken(2)]", outContent.trim());
+        assertEquals("Tokenizing: 2+2" + newline + "[IntToken(2), PlusToken, IntToken(2)]", outContent.trim());
     }
 
     @Test
     public void testMainWithOneArgs() throws java.io.UnsupportedEncodingException  {
         String outContent = testMainWithSystemInAndOut("", new String[] {"-3"});
-        assertEquals("Tokenizing: -3\n[MinusToken, IntToken(3)]", outContent.trim());
+        assertEquals("Tokenizing: -3" + newline + "[MinusToken, IntToken(3)]", outContent.trim());
     }
 
 
